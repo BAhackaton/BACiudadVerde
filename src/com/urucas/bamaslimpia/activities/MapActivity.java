@@ -2,6 +2,7 @@ package com.urucas.bamaslimpia.activities;
 
 import com.urucas.bamaslimpia.R;
 import com.urucas.fragments.LeftMenuFragment;
+import com.urucas.fragments.MainFragment;
 import com.urucas.utils.Utils;
 import com.actionbarsherlock.app.ActionBar;
 import com.actionbarsherlock.app.SherlockFragment;
@@ -17,10 +18,9 @@ import android.provider.MediaStore;
 
 public class MapActivity extends SlidingFragmentActivity{
 
-	private SherlockFragment mFrag;
 	public static SlidingMenu sm;
-	public SherlockFragment mFrag2, projectListFrag;
-	private SherlockFragment commentsFragment;
+	private MainFragment mainFragment;
+	private LeftMenuFragment leftFragment;
 
 	private static MapActivity _instance;
 	
@@ -39,7 +39,7 @@ public class MapActivity extends SlidingFragmentActivity{
 		// actionBar.setIcon(R.drawable.icon_small);
 		
 		sm = getSlidingMenu();
-		sm.setMode(SlidingMenu.LEFT_RIGHT);
+		sm.setMode(SlidingMenu.LEFT);
 		sm.setShadowWidthRes(R.dimen.shadow_width);
 		sm.setShadowDrawable(R.drawable.shadow);
 		sm.setBehindOffsetRes(R.dimen.slidingmenu_offset);
@@ -61,29 +61,18 @@ public class MapActivity extends SlidingFragmentActivity{
 			.replace(R.id.leftmenu_frame, new LeftMenuFragment())
 			.commit();
 			
-			/*
-			commentsFragment = new MapFragment();
+			
+			mainFragment = new MainFragment();
 			
 			getSupportFragmentManager()
 			.beginTransaction()
-			.replace(R.id.projectlist_frame, commentsFragment)
+			.replace(R.id.main_frame, mainFragment)
 			.commit();
-			*/
 			
 		} else {
-			mFrag = (SherlockFragment) getSupportFragmentManager().findFragmentById(R.id.leftmenu_frame);
-			//mFrag2 = (SherlockFragment) getSupportFragmentManager().findFragmentById(R.id.rightmenu_frame);
-			// commentsFragment = (SherlockFragment) getSupportFragmentManager().findFragmentById(R.id.projectlist_frame);
+			leftFragment = (LeftMenuFragment) getSupportFragmentManager().findFragmentById(R.id.leftmenu_frame);
+			mainFragment = (MainFragment) getSupportFragmentManager().findFragmentById(R.id.leftmenu_frame);
 		}
-		
-		/*
-		try {
-			User user = SocialApplication.getDataController().getLoggedUser();
-			
-		}catch(AuthException e) {
-			SocialApplication.logout(MainActivity.this);
-		}
-		*/
 	}
 
 	@Override
