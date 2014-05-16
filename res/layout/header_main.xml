@@ -30,6 +30,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:textStyle="bold"
+            android:textColor="#ffffff"
+            android:layout_marginLeft="6dp"
             android:text="Buenos Aires Mas Limpia"/>
     </LinearLayout>
 

@@ -4,5 +4,48 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
+
+     <View
+        android:layout_width="fill_parent"
+        android:layout_height="2dp"
+        android:background="#003366"/>
     
+    <Button
+        android:id="@+id/campanasBtt"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:layout_gravity="left"
+        android:gravity="left|center_vertical"
+        android:paddingLeft="10dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:textColor="#333333"
+        android:text="Campanas Verdes"/>
+
+     <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="10dp"
+        android:background="#003366"/>
+    
+    <Button
+        android:id="@+id/contenedoresBtt"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+         android:background="@null"
+        android:layout_gravity="left"
+        android:gravity="left|center_vertical"
+        android:paddingLeft="10dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:textColor="#333333"
+        android:text="Contenedores"/>
+    
+       <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="10dp"
+        android:background="#003366"/>
+
 </LinearLayout>

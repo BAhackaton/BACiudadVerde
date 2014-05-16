@@ -35,6 +35,8 @@ public class MapActivity extends SlidingFragmentActivity{
 		
 		
 		actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+		
+		
 		actionBar.setCustomView(R.layout.header_main);
 		// actionBar.setIcon(R.drawable.icon_small);
 		
@@ -61,7 +63,6 @@ public class MapActivity extends SlidingFragmentActivity{
 			.replace(R.id.leftmenu_frame, new LeftMenuFragment())
 			.commit();
 			
-			
 			mainFragment = new MainFragment();
 			
 			getSupportFragmentManager()
@@ -80,17 +81,4 @@ public class MapActivity extends SlidingFragmentActivity{
 	    moveTaskToBack(true);
 	}
 	
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-		switch (item.getItemId()) {
-		/*
-		case R.id.notification:
-			return true;
-			*/
-		case android.R.id.home:
-			toggle();
-			return true;
-		}
-		return super.onOptionsItemSelected(item);
-	}
 }
