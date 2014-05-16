@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">BAMasLimpia</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="retry">Reintentar</string>
+	<string name="update">Actualizar</string>
+	<string name="play_services_required">Esta aplicación no se ejecutará si no actializas Google Play Services</string>
+    <string name="retry_text">Hubo un error al descargar la información</string>
+    
+</resources>
