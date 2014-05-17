@@ -41,7 +41,7 @@ public class LeftMenuFragment extends SherlockFragment{
 			@Override
 			public void onClick(View v) {
 				_activity.toggle();
-				_activity.getContenedores();
+				_activity.showContenedores();
 			}
 		});
 		
@@ -50,7 +50,7 @@ public class LeftMenuFragment extends SherlockFragment{
 			@Override
 			public void onClick(View v) {
 				_activity.toggle();
-				_activity.getCampanas();
+				_activity.showCampanas();
 			}
 		});
 		return view;

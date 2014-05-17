@@ -24,8 +24,7 @@ public class SplashActivity extends Activity {
 		new Handler().postDelayed(new Runnable() {
 			@Override
 			public void run() {
-				//checkGooglePlayServices();
-				initApp();
+				checkGooglePlayServices();
 			}
 		}, 3500);
 	}

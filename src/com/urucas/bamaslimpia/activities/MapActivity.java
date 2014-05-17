@@ -34,8 +34,6 @@ public class MapActivity extends SlidingFragmentActivity{
 
 	private static MapActivity _instance;
 	
-	private ArrayList<Campana> _campanas = new ArrayList<Campana>();
-	private ArrayList<Contenedor> _contenedores = new ArrayList<Contenedor>();
 	private LeftMenuFragment menuFragment;
 	
 	@Override
@@ -105,7 +103,6 @@ public class MapActivity extends SlidingFragmentActivity{
 			mainFragment = (MainFragment) getSupportFragmentManager().findFragmentById(R.id.leftmenu_frame);
 		}
 		
-		getCampanas();
 	}
 
 	@Override
@@ -113,50 +110,12 @@ public class MapActivity extends SlidingFragmentActivity{
 	    moveTaskToBack(true);
 	}
 	
-	public void getCampanas() {
-		if(_campanas.size() > 0){
-			showCampanas(_campanas);
-			return;
-		}
-		BAMasLimpiaApplication.getDataController().getCampanas(-34.5945206,-58.4089203, new CampanasCallback() {
-			@Override
-			public void onSuccess(ArrayList<Campana> campanas) {
-				_campanas = campanas;
-				showCampanas(campanas);
-			}
-			@Override
-			public void onError(String message) {
-				Utils.Toast(MapActivity.this, message);
-			}
-		});
+	public void showContenedores(){
+		mainFragment.showContenedores();
 	}
 	
-	public void getContenedores() {
-		if(_contenedores.size() > 0){
-			showContenedores(_contenedores);
-			return;
-		}
-		BAMasLimpiaApplication.getDataController().getContenedores(new ContenedoresCallback() {
-			
-			@Override
-			public void onSuccess(ArrayList<Contenedor> contenedores) {
-				_contenedores = contenedores;
-				showContenedores(contenedores);
-			}
-			
-			@Override
-			public void onError(String message) {
-				Utils.Toast(MapActivity.this, message);
-			}
-		});
-	}
-	
-	private void showContenedores(ArrayList<Contenedor> contenedores){
-		mainFragment.showContenedores(contenedores);
-	}
-	
-	private void showCampanas(ArrayList<Campana> campanas){
-		mainFragment.showCampanas(campanas);
+	public void showCampanas(){
+		mainFragment.showCampanas();
 	}
 	
 	public void retoogle(){
