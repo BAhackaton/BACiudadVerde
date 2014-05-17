@@ -7,7 +7,7 @@ Buenos Aires Mas limpia la Aplicacion movil para Android para buscar el contened
 TO DO
 =====
 * Buscar solo los contenedores que el usuario tiene cerca ya que esta trayendo 4000 resultados y es muy pesado para la aplicacion. Tomar las coordenadas de GoogleMaps y traer solo aquellos que se encuentren en esa vista del mapa. Si el zoom es muy lejos, no mostrar resultados.
-
+* Poner validacion de GooglePlayServices 
 * Achicar los tamaños de los screenshots!
 
 ![alt tag](https://raw.github.com/Urucas/bamaslimpia/master/screens/screenshot-1400285180274.png) 
