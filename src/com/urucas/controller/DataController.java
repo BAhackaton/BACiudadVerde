@@ -34,8 +34,20 @@ public class DataController {
 		_context = BAMasLimpiaApplication.getInstance().getApplicationContext();
 	}
 
-	public void getCampanas(final CampanasCallback callback){
+	public void getCampanas(double lat0, double lng0, final CampanasCallback callback){
 		String url = "http://bahackaton.cartodb.com/api/v2/sql";
+		double radius = 0.015f*0.015f;
+		String query = "SELECT lat,long, ";
+			   query+= " ((lat - "+String.valueOf(lat0)+")*( lat - "+String.valueOf(lat0)+")) +";
+			   query+= " ((long - "+String.valueOf(lng0)+")*( long - "+String.valueOf(lng0)+"))";
+			   query+= " as dist FROM campanas_colocadas WHERE dist < "+String.valueOf(radius)+" and lat <> ''";
+			   query+= " order by dist ASC limit 100";
+		
+		Log.i("query", query);
+	    /* select lat,long,
+		 *  ((lat - lat0) * ( lat - lat0) ) + ( long - lng0) ) * ( long - lng))) AS dist 
+		 *  where dist < radius*radius
+		 */
 		
 		new JSONRequestTask(new JSONRequestTaskHandler() {
 			
@@ -60,7 +72,10 @@ public class DataController {
 			public void onError(String message) {
 				callback.onError(message);
 			}
-		}).addParam("q","SELECT lat,long FROM campanas_colocadas WHERE lat <> ''").execute(url);
+		}).addParam("q","SELECT lat,long FROM campanas_colocadas").execute(url);
+		// -34.5945206,-58.4089203
+		
+		
 	}
 	
 	public void getContenedores(final ContenedoresCallback callback){

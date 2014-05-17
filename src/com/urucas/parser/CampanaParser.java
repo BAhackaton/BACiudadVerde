@@ -11,7 +11,6 @@ public abstract class CampanaParser {
 	public static Campana parse(JSONObject jsonObject){
 		try {
 			Campana c = new Campana();
-			String calle = jsonObject.getString("calle");
 			double lat = jsonObject.getDouble("lat");
 			double lng = jsonObject.getDouble("long");
 			if(lat == 0 || lng == 0) return null;

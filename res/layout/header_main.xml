@@ -10,8 +10,7 @@
         android:layout_height="wrap_content"
         android:background="@null"
         android:padding="8dp"
-        android:src="@drawable/menu_btt"
-        />
+        android:src="@drawable/menu_btt"/>
 
     <LinearLayout
         android:layout_width="fill_parent"
@@ -29,10 +28,19 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:textStyle="bold"
-            android:textColor="#ffffff"
             android:layout_marginLeft="6dp"
-            android:text="Buenos Aires Mas Limpia"/>
+            android:text="Buenos Aires Mas Limpia"
+            android:textColor="#ffffff"
+            android:textStyle="bold"/>
     </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progressBar1"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_margin="6dp"
+        android:visibility="gone"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"/>
 
 </RelativeLayout>

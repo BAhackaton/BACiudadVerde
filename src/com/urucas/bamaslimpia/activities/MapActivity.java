@@ -118,7 +118,7 @@ public class MapActivity extends SlidingFragmentActivity{
 			showCampanas(_campanas);
 			return;
 		}
-		BAMasLimpiaApplication.getDataController().getCampanas(new CampanasCallback() {
+		BAMasLimpiaApplication.getDataController().getCampanas(-34.5945206,-58.4089203, new CampanasCallback() {
 			@Override
 			public void onSuccess(ArrayList<Campana> campanas) {
 				_campanas = campanas;

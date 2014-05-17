@@ -9,7 +9,9 @@ import android.view.ViewGroup;
 import com.actionbarsherlock.app.SherlockFragment;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.GoogleMap.OnCameraChangeListener;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.LatLngBounds.Builder;
@@ -36,10 +38,18 @@ public class MainFragment extends SherlockFragment{
 		SupportMapFragment mySupportMapFragment = (SupportMapFragment)getActivity().getSupportFragmentManager().findFragmentById(R.id.map);
 		googleMap = mySupportMapFragment.getMap();
 		
-		myLatLng = new LatLng(-34.603857,-58.381853);
+		myLatLng = new LatLng(-34.5945206,-58.4089203);
 		googleMap.setMyLocationEnabled(true);
 		googleMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
-		googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(myLatLng, 12));
+		googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(myLatLng, 16));
+		
+		googleMap.setOnCameraChangeListener(new OnCameraChangeListener() {
+			@Override
+			public void onCameraChange(CameraPosition position) {
+				LatLngBounds bounds = googleMap.getProjection().getVisibleRegion().latLngBounds;
+				
+			}
+		});
 		
 		builder = new LatLngBounds.Builder();
 		
