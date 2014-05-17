@@ -59,6 +59,12 @@ public class MainFragment extends SherlockFragment{
 		googleMap.setOnCameraChangeListener(new OnCameraChangeListener() {
 			@Override
 			public void onCameraChange(CameraPosition position) {
+				 float minZoom = 15.0f;
+				 if(position.zoom < minZoom) {
+					 googleMap.animateCamera(CameraUpdateFactory.zoomTo(minZoom));
+					 return;
+				 }
+				 
 				if(CAMPANAS_O_CONTENEDORES == FILTER_CAMPANAS) {
 					filterCampanas(googleMap.getProjection().getVisibleRegion().latLngBounds);
 				}else if(CAMPANAS_O_CONTENEDORES == FILTER_CONTENEDORES) {
