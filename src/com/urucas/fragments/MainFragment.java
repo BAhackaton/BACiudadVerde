@@ -100,6 +100,8 @@ public class MainFragment extends SherlockFragment{
 		CAMPANAS_O_CONTENEDORES = FILTER_CAMPANAS;
 		if(_campanas.size() == 0) {
 			getCampanas();
+		}else{
+			filterCampanas(googleMap.getProjection().getVisibleRegion().latLngBounds);
 		}
 	}
 
@@ -108,6 +110,7 @@ public class MainFragment extends SherlockFragment{
 			@Override
 			public void onSuccess(ArrayList<Campana> campanas) {
 				_campanas = campanas;
+				showCampanas();
 			}
 			@Override
 			public void onError(String message) {
@@ -122,6 +125,7 @@ public class MainFragment extends SherlockFragment{
 			@Override
 			public void onSuccess(ArrayList<Contenedor> contenedores) {
 				_contenedores = contenedores;
+				showContenedores();
 			}
 			
 			@Override
@@ -135,6 +139,8 @@ public class MainFragment extends SherlockFragment{
 		CAMPANAS_O_CONTENEDORES = FILTER_CONTENEDORES;
 		if(_contenedores.size() == 0) {
 			getContenedores();
+		}else{
+			filterContenedores(googleMap.getProjection().getVisibleRegion().latLngBounds);
 		}
 	}
 }
