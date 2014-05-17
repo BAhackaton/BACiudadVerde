@@ -18,9 +18,11 @@
         android:layout_gravity="left"
         android:gravity="left|center_vertical"
         android:paddingLeft="10dp"
-        android:paddingTop="10dp"
-        android:paddingBottom="10dp"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp"
         android:textColor="#333333"
+        android:textSize="18sp"
+        android:textStyle="bold"
         android:text="Campanas Verdes"/>
 
      <View
@@ -37,9 +39,11 @@
         android:layout_gravity="left"
         android:gravity="left|center_vertical"
         android:paddingLeft="10dp"
-        android:paddingTop="10dp"
-        android:paddingBottom="10dp"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp"
         android:textColor="#333333"
+         android:textSize="18sp"
+        android:textStyle="bold"
         android:text="Contenedores"/>
     
        <View
