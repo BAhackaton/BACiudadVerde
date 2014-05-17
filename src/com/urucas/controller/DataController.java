@@ -60,7 +60,7 @@ public class DataController {
 			public void onError(String message) {
 				callback.onError(message);
 			}
-		}).addParam("q","SELECT * FROM campanas_colocadas").execute(url);
+		}).addParam("q","SELECT lat,long FROM campanas_colocadas WHERE lat <> ''").execute(url);
 	}
 	
 	public void getContenedores(final ContenedoresCallback callback){
@@ -90,7 +90,7 @@ public class DataController {
 			public void onError(String message) {
 				callback.onError(message);
 			}
-		}).addParam("q","SELECT * FROM contenedores").execute(url);
+		}).addParam("q","SELECT lat,long FROM contenedores WHERE lat <> ''").execute(url);
 	}
 	
 }
