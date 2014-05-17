@@ -29,7 +29,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="6dp"
-            android:text="Buenos Aires Mas Limpia"
+            android:text="Ciudad Verde"
             android:textColor="#ffffff"
             android:textStyle="bold"/>
     </LinearLayout>
